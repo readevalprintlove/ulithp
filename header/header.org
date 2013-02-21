@@ -1,4 +1,4 @@
-/μLithp/ - a Lisp in 27 lines of Ruby [[http://www.github.com/fogus/ulithp][source]]
+/μLithp/ - a Lisp in 27 lines of Ruby [[https://github.com/fogus/ulithp][source]]
 
 [[file:index.org][Primordial ooze]] | [[file:reader.org][A reader]] | [[file:repl.org][REPL]] | [[file:compiler.org][A compiler]] | [[file:interop.org][Ruby interop]]
 
