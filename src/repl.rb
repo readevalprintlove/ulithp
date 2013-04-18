@@ -1,5 +1,6 @@
 require 'lithp'
 require 'reader'
+require 'readline'
 
 lisp = Lisp.new
 
@@ -12,10 +13,10 @@ if File.exist?("core.ulithp")
   puts "Done loading core library containing #{forms.length} forms."
 end
 
-print "ulithp> "
-while not $stdin.eof?
-  line = readline
+stty_save = `stty -g`.chomp
+trap("INT") { system("stty", stty_save); exit }
+
+while line = Readline.readline("ulithp> ", true)
   s_expression = Reader.new(line).read
   p lisp.eval(s_expression)
-  print "ulithp> "
 end
