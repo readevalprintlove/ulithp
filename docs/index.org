@@ -49,7 +49,7 @@ I'll give more detail about each below.
 
 Every Lisp evaluation takes place in the context of some environment.  In μLithp the environment is a simple Hash instance and represents a global evaluation context.  The ~:label~ symbol is bound to a ~lambda~ that takes two things, an Array with a symbol representing a name and a value and also a context (that is ignored).  The name is then inserted into the global environment with the given value.  As you can see, all bindings are created explicitly in ~@env~.  You'll notice that I created the ~:if~ logic with the ~proc~ form.  Doing so signals to the evaluator that the thing defined should receive its arguments unevaluated.
 
-You'll notice that all of the callable's take an array as the first argument and a context as the second.  This is key for future expansion.  Additionally, I like to use Ruby's destructuring format to unwrap the actual arguments hidden in the passed array.
+You'll notice that all of the callables take an array as the first argument and a context as the second.  This is key for future expansion.  Additionally, I like to use Ruby's destructuring format to unwrap the actual arguments hidden in the passed array.
 
 #+name: ur
 #+begin_src ruby :tangle ../src/lithp.rb :noweb yes 
